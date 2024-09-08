@@ -1,0 +1,131 @@
+@import "_var";
+@import "_mixin";
+
+* {
+    box-sizing: border-box;
+}
+
+header, footer {
+    text-align: center;
+    margin: auto;
+}
+
+.slider-container {
+    margin-left: 490px;
+    max-height: $max-slider-height;
+    max-width: $max-container-width;
+    width: 640px;
+}
+
+.row1 {
+    margin-top: $default-margin-top;
+    @include row-margin;
+    
+}
+
+.row2 {
+    width: 1080px;
+    margin-top: 10px;
+    margin-bottom: $default-margin-top;
+}
+
+.row {
+    height: 200px;
+    display: flex;
+    transition: transform 1s ease-in-out;
+    overflow: hidden;
+    justify-content: flex-end;
+}
+
+.bottom-container{
+    display: flex;
+    @include row-margin;
+}
+
+
+
+.container {
+    margin: auto;
+    display: flex;
+}
+
+.text-container {
+    width: 300px;
+    height: 295px;
+    margin-top: 40px;
+    margin-left: 20px;
+    
+}
+
+.row img {
+    object-fit:cover; 
+    margin: 0 5px 0 0;
+    transition: transform opacity 0.5s ease;
+    
+}
+
+.row1 img:last-child {
+    margin :0;
+}
+.buttons {
+    margin-top: 10px;
+    margin-left: 150px;
+    width: 60px;
+    height: 130px;
+}
+
+.arrow {
+    width: 60px;
+    height: 65px;
+    object-fit: cover;
+    margin: 0px;
+    padding: 0px;
+}
+
+.left-arrow:hover .left-arrow-image{
+    content: url('../Assets/arrow-blue-left.png');
+    object-fit: cover;
+}
+
+.right-arrow:hover .right-arrow-image {
+    content: url("../Assets/arrow-blue-right.png");
+    object-fit: cover;
+}
+
+
+p {
+    font-size: 22px;
+    font-family: $default-font-family;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-100px);  /* Pomiče se za cijelu širinu sljedeće slike */
+        opacity: 1;
+    }
+}
+
+@keyframes curtainClose {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+.animate-slide-right {
+    animation: curtainClose 0.5s ease-in-out forwards;
+    transform-origin: right;
+    overflow: hidden;
+}
+
+.animate-slide-left {
+    animation: slideLeft 0.5s ease-in-out forwards;
+}
+
+  
+  

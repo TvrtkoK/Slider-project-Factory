@@ -1,0 +1,167 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header, footer {
+  text-align: center;
+  margin: auto;
+}
+
+.slider-container {
+  margin-left: 490px;
+  max-height: 530px;
+  max-width: 940px;
+  width: 640px;
+}
+
+.row1 {
+  margin-top: 60px;
+  max-width: 1230px;
+  margin-left: calc(-50vw + 450px);
+}
+
+.row2 {
+  width: 1080px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.row {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  overflow: hidden;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.bottom-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1230px;
+  margin-left: calc(-50vw + 450px);
+}
+
+.container {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.text-container {
+  width: 300px;
+  height: 295px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.row img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 5px 0 0;
+  -webkit-transition: -webkit-transform opacity 0.5s ease;
+  transition: -webkit-transform opacity 0.5s ease;
+  transition: transform opacity 0.5s ease;
+  transition: transform opacity 0.5s ease, -webkit-transform opacity 0.5s ease;
+}
+
+.row1 img:last-child {
+  margin: 0;
+}
+
+.buttons {
+  margin-top: 10px;
+  margin-left: 150px;
+  width: 60px;
+  height: 130px;
+}
+
+.arrow {
+  width: 60px;
+  height: 65px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0px;
+  padding: 0px;
+}
+
+.left-arrow:hover .left-arrow-image {
+  content: url("../Assets/arrow-blue-left.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.right-arrow:hover .right-arrow-image {
+  content: url("../Assets/arrow-blue-right.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+p {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px); /* Pomiče se za cijelu širinu sljedeće slike */
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px); /* Pomiče se za cijelu širinu sljedeće slike */
+    opacity: 1;
+  }
+}
+@-webkit-keyframes curtainClose {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes curtainClose {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-slide-right {
+  -webkit-animation: curtainClose 0.5s ease-in-out forwards;
+          animation: curtainClose 0.5s ease-in-out forwards;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  overflow: hidden;
+}
+
+.animate-slide-left {
+  -webkit-animation: slideLeft 0.5s ease-in-out forwards;
+          animation: slideLeft 0.5s ease-in-out forwards;
+}
